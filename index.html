@@ -372,16 +372,7 @@ class color {
 	}
 
 	makeHue() {
-		//
-		mixpanel.init('08b60f0cf65b908996f6aded70a17f61', {debug: true, track_pageview: true, persistence: 'localStorage'});
- 
-			// Set this to a unique identifier for the user performing the event.
-			mixpanel.identify('Fred')
- 
-			// Track an event. It can be anything, but in this example, we're tracking a Sign Up event.
-			mixpanel.track('Ad account Setup', {
-  			'Signup Type': 'Referral'
-		})
+		
 		let timeEncoding = this.timeEncoding;
 		let time = this.clock.getTime();
 		switch (timeEncoding) {
@@ -460,6 +451,16 @@ function toggleOptions(event) {
 }
 
 window.onload = function() {
+	//
+		mixpanel.init('08b60f0cf65b908996f6aded70a17f61', {debug: true, track_pageview: true, persistence: 'localStorage'});
+ 
+			// Set this to a unique identifier for the user performing the event.
+			mixpanel.identify('Fred')
+ 
+			// Track an event. It can be anything, but in this example, we're tracking a Sign Up event.
+			mixpanel.track('Ad account Setup', {
+  			'Signup Type': 'Referral'
+		})
 	let clock = new Clock();
 	clock.start()
 	document.querySelector('#controls').addEventListener('click', toggleOptions);
